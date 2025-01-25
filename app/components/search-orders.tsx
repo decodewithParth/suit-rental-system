@@ -7,7 +7,16 @@ import { Label } from "@/components/ui/label"
 
 export default function SearchOrders() {
   const [query, setQuery] = useState("")
-  const [results, setResults] = useState<any[]>([])
+  const [results, setResults] = useState<
+    Array<{
+      id: string
+      type: "suit" | "shervani"
+      number: string
+      bookingDate: string
+      weddingDate: string
+      quantity: number
+    }>
+  >([])
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault()
